@@ -3,7 +3,7 @@
 Used version of the engine: Unreal Engine 5.8.4
 
 ### HOW TO RUN THE GAME:
-1) Unzip the downloaded archive (.zip) on your PC
+1) Unzip the downloaded archive (.zip) from the Google Drive ("Game" folder) on your PC
 2) Open the extracted folder
 3) Double-click on CollectAndAvoid.exe to launch the game
 
