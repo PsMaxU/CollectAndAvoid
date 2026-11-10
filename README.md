@@ -43,6 +43,11 @@ Player & Game System:
 - GBP_PlayerController: processes keyboard and mouse inputs, and controls the camera
 
 ### ASSET LIST:
+Used from the Starter Content:
+- Starter_Music01 as Chase_Wav  
+- Starter_Music_Cue as Chase_Cue  
+- Starter_Wind05 as BackgroundWeather_Wav
+
 Character animations: https://fab.com/s/70f5ca18b360  
 License: https://www.fab.com/eula
 
