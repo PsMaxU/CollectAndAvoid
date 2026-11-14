@@ -37,10 +37,10 @@ Enemy:
 - BTT_NextPatrolPoint: a custom Behavior Tree task that calculates the next patrol point  
 
 Player & Game System:  
-- GBP_GameMode: manages core rules (win/loss conditions)  
-- GBP_GameState: stores global game data (score, current state)  
-- GBP_Hero: the physical representation of the player (handles movement mechanics)  
-- GBP_PlayerController: processes keyboard and mouse inputs, and controls the camera
+- BP_GameMode: manages core rules (win/loss conditions)  
+- BP_GameState: stores global game data (score, current state)  
+- BP_Hero: the physical representation of the player (handles movement mechanics)  
+- BP_PlayerController: processes keyboard and mouse inputs, and controls the camera
 
 ### ASSET LIST:
 Used from the Starter Content:
