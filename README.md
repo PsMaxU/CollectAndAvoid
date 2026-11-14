@@ -11,7 +11,7 @@ Used version of the engine: Unreal Engine 5.8.4
 - WASD - Move
 - Mouse - Look
 - Shift - Sprint
-- Enter - Jump
+- Space - Jump
 - Esc - Pause
 
 ### ANSWERS TO THE QUESTIONS:
@@ -25,9 +25,11 @@ Changed movement parameters:
 
 The most expensive performance-cost are:
 - View Visibility: calculates what the camera currently sees, which causes the biggest sudden performance spikes  
-- Init dynamic shadows: prepares lighting and shadows, which creates the highest constant background performance load
+- Init dynamic shadows: prepares lighting and shadows, which creates the highest constant background performance load  
 
-### SHORT DESCRIPTION OF EACH BLUEPRINT:
+-Enemy Max Walk Speed is set on Event BeginPlay (value from Data asset)
+
+### SHORT DESCRIPTION OF EACH BLUEPRINT (all use prefix BP_):
 BP_PickUp: Parent class for collectable items  
 BP_Coin: a child of BP_PickUp, has its own defaults  
 Enemy:
@@ -42,13 +44,22 @@ Player & Game System:
 - BP_Hero: the physical representation of the player (handles movement mechanics)  
 - BP_PlayerController: processes keyboard and mouse inputs, and controls the camera
 
+### SCORING SYSTEM:  
+score - number of coins - scale - Z rotation speed  
+5 - 5 - 1 - 90  
+10 - 4 - 1,5 - 72  
+15 - 1 - 2 - 60  
+20 - 2 - 2,5 - 45  
+Overall: 12 coins, 120 points  
+Goal score is 100, so that a player have multiple ways and paths to win the game
+
 ### ASSET LIST:
 Used from the Starter Content:
 - Starter_Music01 as Chase_Wav  
 - Starter_Music_Cue as Chase_Cue  
 - Starter_Wind05 as BackgroundWeather_Wav
 
-Character animations: https://fab.com/s/70f5ca18b360  
+Enemy animations: https://fab.com/s/70f5ca18b360  
 License: https://www.fab.com/eula
 
 ### WHAT I LEARNED AND WHAT WAS HARD:
