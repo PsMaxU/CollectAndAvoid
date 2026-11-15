@@ -3,6 +3,8 @@
 Used version of the engine: Unreal Engine 5.8.4
 
 ### HOW TO RUN THE GAME:
+Google Drive link:  
+https://drive.google.com/drive/folders/1piahYBG43t4GA02y_Ph3fXvwlXhZbKs3?usp=sharing
 1) Unzip the downloaded archive (.zip) from the Google Drive ("Game" folder) on your PC
 2) Open the extracted folder
 3) Double-click on CollectAndAvoid.exe to launch the game
@@ -61,6 +63,15 @@ View Visibility: 0.10 ms (avg) / 2.61 ms (max)
 #### Before and after optimization:
 Before (Lumen, Ray Tracing ON, Default RHI DirectX 12): 80.20 FPS, frame 12.47 ms  
 After (Screen Space, Ray Tracing OFF, Default RHI DirectX 11): 120.00 FPS, frame 8.3 ms
+
+### KNOWN BUGS:
+- Enemy walk animation stops playing after a few loops
+- Output Log had "Attempted to access AudioComponent_7 via property ChaseSound, but AudioComponent_7 is not valid (pending kill or garbage)" error, which appeared when a player get close to the enemy and lose, while not being seen.
+It was resolved by adding IsValid (with execution) node before Stop node for ChaseSound
+- Output Log had "LogAutomationTest: Error: Condition failed" warning, which appeared on every launch of the Editor.
+It was resolved by setting the "Editor Locale" to "English" under "Region & Language" in the "Editor Preferences"
+- Output Log had "LogPlayerController: Error: InputMode:UIOnly - Attempting to focus Non-Focusable widget SObjectWidget [Widget.cpp(976)]!" warning, which appeared when a Pause, Lose or Win widget was visible.
+It was resolved by flagging the widgets as isFocusable
 
 ### ASSET LIST:
 #### Used from the Starter Content:
