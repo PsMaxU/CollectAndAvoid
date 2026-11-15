@@ -22,11 +22,6 @@ Changed movement parameters:
 
 -On overlap, the coin checks with a Cast to the hero class, so that it continues execution only if overlapped actor is the hero  
 -Score on a screen is updated with a function in order to not use per-frame binding (which is basically Event Tick) that heavily lowers performance when used a lot  
-
-The most expensive performance-cost are:
-- View Visibility: calculates what the camera currently sees, which causes the biggest sudden performance spikes  
-- Init dynamic shadows: prepares lighting and shadows, which creates the highest constant background performance load  
-
 -Enemy Max Walk Speed is set on Event BeginPlay (value from Data asset)
 
 ### SHORT DESCRIPTION OF EACH BLUEPRINT (all use prefix BP_):
@@ -53,12 +48,36 @@ score - number of coins - scale - Z rotation speed
 Overall: 12 coins, 120 points  
 Goal score is 100, so that a player have multiple ways and paths to win the game
 
-### ASSET LIST:
-Used from the Starter Content:
-- Starter_Music01 as Chase_Wav  
-- Starter_Music_Cue as Chase_Cue  
-- Starter_Wind05 as BackgroundWeather_Wav
+### PROFILING:
+Scene: L_Arena  
+FPS: 80.20 FPS  
+Frame: 12.47 ms  
+Game: 12.44 ms  
+Draw: 0.00 ms  
+GPU: 4.84 ms  
+Init dynamic shadows: 0.24 ms (avg) / 0.61 ms (max)  
+View Visibility: 0.10 ms (avg) / 2.61 ms (max)
 
+#### Before and after optimization:
+Before (Lumen, Ray Tracing ON, Default RHI DirectX 12): 80.20 FPS, frame 12.47 ms  
+After (Screen Space, Ray Tracing OFF, Default RHI DirectX 11): 120.00 FPS, frame 8.3 ms
+
+### ASSET LIST:
+#### Used from the Starter Content:
+- Starter_Music01 as Chase_Wav
+- Starter_Music_Cue as Chase_Cue
+- Starter_Wind05 as BackgroundWeather_Wav
+- SM_Ramp
+
+#### Used from the Third Persom Template:  
+/Characters/Mannequins/
+- Anims/Unarmed/
+- Materials/
+- Meshes/
+- Rigs/
+- Textures/
+
+#### Used from FAB:
 Enemy animations: https://fab.com/s/70f5ca18b360  
 License: https://www.fab.com/eula
 
